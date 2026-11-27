@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+*.log
+.env*
+!.env.example
+*.bak
+backend/storage/raw_cache/
+backend/storage/*.sqlite

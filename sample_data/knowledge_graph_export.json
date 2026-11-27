@@ -1,0 +1,1308 @@
+{
+  "nodes": [
+    {
+      "node_id": "protein:P0A9K9",
+      "node_type": "Protein",
+      "label": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.796052+00:00",
+      "properties": {
+        "uniprot_accession": "P0A9K9",
+        "gene_name": "slyD",
+        "organism": "Escherichia coli (strain K12)",
+        "max_consecutive_his": 3,
+        "native_imac_contaminant_risk": false,
+        "source_url": "https://www.uniprot.org/uniprotkb/P0A9K9/entry",
+        "role": "host_contaminant"
+      }
+    },
+    {
+      "node_id": "method:IMAC",
+      "node_type": "PurificationMethod",
+      "label": "IMAC (Immobilized Metal Affinity Chromatography)",
+      "primary_source_type": "Multi-Source",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.803447+00:00",
+      "properties": {}
+    },
+    {
+      "node_id": "run:a1275b8db9",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.805543+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "UniProt",
+        "source_title": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+        "source_url": "https://www.uniprot.org/uniprotkb/P0A9K9/entry"
+      }
+    },
+    {
+      "node_id": "cond:5b844037d1",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.813949+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "protein:P42212",
+      "node_type": "Protein",
+      "label": "Green fluorescent protein (P42212)",
+      "primary_source_type": "Multi-Source",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.816792+00:00",
+      "properties": {
+        "uniprot_accession": "P42212",
+        "gene_name": "GFP",
+        "organism": "Aequorea victoria",
+        "max_consecutive_his": 1,
+        "native_imac_contaminant_risk": false,
+        "source_url": "https://www.uniprot.org/uniprotkb/P42212/entry"
+      }
+    },
+    {
+      "node_id": "run:c8ae7630e3",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.820328+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "UniProt",
+        "source_title": "Green fluorescent protein (P42212)",
+        "source_url": "https://www.uniprot.org/uniprotkb/P42212/entry"
+      }
+    },
+    {
+      "node_id": "cond:77e71394b5",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.824210+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "protein:P77398",
+      "node_type": "Protein",
+      "label": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.826860+00:00",
+      "properties": {
+        "uniprot_accession": "P77398",
+        "gene_name": "arnA",
+        "organism": "Escherichia coli (strain K12)",
+        "max_consecutive_his": 2,
+        "native_imac_contaminant_risk": false,
+        "source_url": "https://www.uniprot.org/uniprotkb/P77398/entry",
+        "role": "host_contaminant"
+      }
+    },
+    {
+      "node_id": "run:f251b3a3a3",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.829792+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "UniProt",
+        "source_title": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+        "source_url": "https://www.uniprot.org/uniprotkb/P77398/entry"
+      }
+    },
+    {
+      "node_id": "cond:a6ecd03b7b",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.835900+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "protein:P10636",
+      "node_type": "Protein",
+      "label": "Microtubule-associated protein tau (P10636)",
+      "primary_source_type": "Cytiva",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.838361+00:00",
+      "properties": {
+        "source_url": "https://europepmc.org/article/PMC/PMC13546840"
+      }
+    },
+    {
+      "node_id": "run:082b938d72",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "Cytiva",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.840706+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "Cytiva",
+        "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+        "source_url": "https://europepmc.org/article/PMC/PMC13546840"
+      }
+    },
+    {
+      "node_id": "cond:9e46aa796d",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "Cytiva",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.844096+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "run:f98a749206",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "Cytiva",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.847481+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "Cytiva",
+        "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+        "source_url": "https://europepmc.org/article/PMC/PMC13546840"
+      }
+    },
+    {
+      "node_id": "cond:5dadf5d811",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "Cytiva",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.850692+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "protein:recombinant_protein",
+      "node_type": "Protein",
+      "label": "His-tagged Recombinant Protein",
+      "primary_source_type": "Multi-Source",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.852688+00:00",
+      "properties": {
+        "source_url": "https://europepmc.org/article/PMC/PMC13546840"
+      }
+    },
+    {
+      "node_id": "run:02ce9b804a",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "Cytiva",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.854579+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "Cytiva",
+        "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+        "source_url": "https://europepmc.org/article/PMC/PMC13546840"
+      }
+    },
+    {
+      "node_id": "cond:f05e0bd7f0",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "Cytiva",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.857632+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "run:565480daee",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.861517+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres",
+        "source_url": "https://doi.org/10.1039/c6ra27736e"
+      }
+    },
+    {
+      "node_id": "cond:c66c43387b",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.864402+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "run:81e3c48437",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.868624+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+        "source_url": "https://doi.org/10.3389/fmicb.2024.1403623"
+      }
+    },
+    {
+      "node_id": "cond:5962d646ca",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.871910+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "run:3bffc2944e",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.875509+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+        "source_url": "https://doi.org/10.3389/fmicb.2024.1403623"
+      }
+    },
+    {
+      "node_id": "cond:9bdcfdc5c5",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.878886+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "run:3c44821022",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.882284+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+        "source_url": "https://doi.org/10.3389/fmicb.2024.1403623"
+      }
+    },
+    {
+      "node_id": "cond:da47c3daf8",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.885533+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "out:49e35508f9",
+      "node_type": "OutcomeMetric",
+      "label": "Out (Purity:purity, and yield in h | Yield:yield in h | Act:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.887844+00:00",
+      "properties": {
+        "purity": "purity, and yield in h",
+        "yield_metric": "yield in h",
+        "activity": null
+      }
+    },
+    {
+      "node_id": "run:cb9293e5e6",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.891623+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+        "source_url": "https://doi.org/10.3389/fmicb.2024.1403623"
+      }
+    },
+    {
+      "node_id": "cond:6b5191368a",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.895460+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "out:b1cc65c793",
+      "node_type": "OutcomeMetric",
+      "label": "Out (Purity:null | Yield:yields when the 8xhis-tag or strep-tag®ii was | Act:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.897751+00:00",
+      "properties": {
+        "purity": null,
+        "yield_metric": "yields when the 8xhis-tag or strep-tag®ii was",
+        "activity": null
+      }
+    },
+    {
+      "node_id": "run:895a3dec55",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.901473+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+        "source_url": "https://doi.org/10.16923/reb.v14i3.638"
+      }
+    },
+    {
+      "node_id": "cond:3ce837285a",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.904644+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "run:da9b28c665",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.908015+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+        "source_url": "https://doi.org/10.16923/reb.v14i3.638"
+      }
+    },
+    {
+      "node_id": "cond:4f2f2a56ba",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.911053+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "run:37078b6d8c",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R1)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.914504+00:00",
+      "properties": {
+        "round": 1,
+        "source_type": "OpenAlex",
+        "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+        "source_url": "https://doi.org/10.16923/reb.v14i3.638"
+      }
+    },
+    {
+      "node_id": "cond:a8916b044b",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "OpenAlex",
+      "discovered_round": 1,
+      "updated_round": 1,
+      "created_at": "2026-11-22T15:26:40.917683+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    },
+    {
+      "node_id": "protein:P10371",
+      "node_type": "Protein",
+      "label": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase (P10371)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 2,
+      "updated_round": 2,
+      "created_at": "2026-11-22T15:28:19.458115+00:00",
+      "properties": {
+        "uniprot_accession": "P10371",
+        "gene_name": "hisA",
+        "organism": "Escherichia coli (strain K12)",
+        "max_consecutive_his": 1,
+        "native_imac_contaminant_risk": false,
+        "source_url": "https://www.uniprot.org/uniprotkb/P10371/entry"
+      }
+    },
+    {
+      "node_id": "run:8810964566",
+      "node_type": "ExperimentRun",
+      "label": "Run (IMAC | R2)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 2,
+      "updated_round": 2,
+      "created_at": "2026-11-22T15:28:19.466429+00:00",
+      "properties": {
+        "round": 2,
+        "source_type": "UniProt",
+        "source_title": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase (P10371)",
+        "source_url": "https://www.uniprot.org/uniprotkb/P10371/entry"
+      }
+    },
+    {
+      "node_id": "cond:6aff6dc01b",
+      "node_type": "ConditionSet",
+      "label": "Cond (Wash:null | Elute:null | Denat:null)",
+      "primary_source_type": "UniProt",
+      "discovered_round": 2,
+      "updated_round": 2,
+      "created_at": "2026-11-22T15:28:19.473786+00:00",
+      "properties": {
+        "binding_buffer": null,
+        "wash_imidazole_conc": null,
+        "elution_imidazole_conc": null,
+        "ph_value": null,
+        "denaturant": null,
+        "additive_tolerance": null
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge:d48dc98be824",
+      "source_node": "run:a1275b8db9",
+      "target_node": "protein:P0A9K9",
+      "relation_type": "PURIFIES",
+      "source_id": "uniprot_P0A9K9",
+      "evidence_quote": "UniProt Entry: P0A9K9 (SLYD_ECOLI) Protein Name: FKBP-type peptidyl-prolyl cis-trans isomerase SlyD Gene: slyD Organism: Escherichia coli (strain K12) Sequence Length: 196 aa | Total Histidines: 20 | Max Consecutive His: 3 C-terminal 25aa: GHDHGHEHGGEGCCGGKGNGGCGCH Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.807934+00:00",
+      "source_title": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P0A9K9/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:71f3020663e1",
+      "source_node": "run:a1275b8db9",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "uniprot_P0A9K9",
+      "evidence_quote": "UniProt Entry: P0A9K9 (SLYD_ECOLI) Protein Name: FKBP-type peptidyl-prolyl cis-trans isomerase SlyD Gene: slyD Organism: Escherichia coli (strain K12) Sequence Length: 196 aa | Total Histidines: 20 | Max Consecutive His: 3 C-terminal 25aa: GHDHGHEHGGEGCCGGKGNGGCGCH Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.809718+00:00",
+      "source_title": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P0A9K9/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:eca02f684b3c",
+      "source_node": "run:a1275b8db9",
+      "target_node": "protein:P0A9K9",
+      "relation_type": "TARGETS_CONTAMINANT",
+      "source_id": "uniprot_P0A9K9",
+      "evidence_quote": "UniProt Entry: P0A9K9 (SLYD_ECOLI) Protein Name: FKBP-type peptidyl-prolyl cis-trans isomerase SlyD Gene: slyD Organism: Escherichia coli (strain K12) Sequence Length: 196 aa | Total Histidines: 20 | Max Consecutive His: 3 C-terminal 25aa: GHDHGHEHGGEGCCGGKGNGGCGCH Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.813027+00:00",
+      "source_title": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P0A9K9/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:84b5eba5d608",
+      "source_node": "run:a1275b8db9",
+      "target_node": "cond:5b844037d1",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "uniprot_P0A9K9",
+      "evidence_quote": "UniProt Entry: P0A9K9 (SLYD_ECOLI) Protein Name: FKBP-type peptidyl-prolyl cis-trans isomerase SlyD Gene: slyD Organism: Escherichia coli (strain K12) Sequence Length: 196 aa | Total Histidines: 20 | Max Consecutive His: 3 C-terminal 25aa: GHDHGHEHGGEGCCGGKGNGGCGCH Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.816112+00:00",
+      "source_title": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P0A9K9/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:5e12b10be1dd",
+      "source_node": "run:c8ae7630e3",
+      "target_node": "protein:P42212",
+      "relation_type": "PURIFIES",
+      "source_id": "uniprot_P42212",
+      "evidence_quote": "UniProt Entry: P42212 (GFP_AEQVI) Protein Name: Green fluorescent protein Gene: GFP Organism: Aequorea victoria Sequence Length: 238 aa | Total Histidines: 10 | Max Consecutive His: 1 C-terminal 25aa: KRDHMVLLEFVTAAGITHGMDELYK Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.822377+00:00",
+      "source_title": "Green fluorescent protein (P42212)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P42212/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:ff1fe9d0b3e9",
+      "source_node": "run:c8ae7630e3",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "uniprot_P42212",
+      "evidence_quote": "UniProt Entry: P42212 (GFP_AEQVI) Protein Name: Green fluorescent protein Gene: GFP Organism: Aequorea victoria Sequence Length: 238 aa | Total Histidines: 10 | Max Consecutive His: 1 C-terminal 25aa: KRDHMVLLEFVTAAGITHGMDELYK Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.823564+00:00",
+      "source_title": "Green fluorescent protein (P42212)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P42212/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:918518e94229",
+      "source_node": "run:c8ae7630e3",
+      "target_node": "cond:77e71394b5",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "uniprot_P42212",
+      "evidence_quote": "UniProt Entry: P42212 (GFP_AEQVI) Protein Name: Green fluorescent protein Gene: GFP Organism: Aequorea victoria Sequence Length: 238 aa | Total Histidines: 10 | Max Consecutive His: 1 C-terminal 25aa: KRDHMVLLEFVTAAGITHGMDELYK Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.826132+00:00",
+      "source_title": "Green fluorescent protein (P42212)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P42212/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:5a9016a1d22b",
+      "source_node": "run:f251b3a3a3",
+      "target_node": "protein:P77398",
+      "relation_type": "PURIFIES",
+      "source_id": "uniprot_P77398",
+      "evidence_quote": "UniProt Entry: P77398 (ARNA_ECOLI) Protein Name: Bifunctional polymyxin resistance protein ArnA Gene: arnA Organism: Escherichia coli (strain K12) Sequence Length: 660 aa | Total Histidines: 27 | Max Consecutive His: 2 C-terminal 25aa: IDMQETIDETLDFFLRTVDLTDKPS Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.831754+00:00",
+      "source_title": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P77398/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:81e4959c31c2",
+      "source_node": "run:f251b3a3a3",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "uniprot_P77398",
+      "evidence_quote": "UniProt Entry: P77398 (ARNA_ECOLI) Protein Name: Bifunctional polymyxin resistance protein ArnA Gene: arnA Organism: Escherichia coli (strain K12) Sequence Length: 660 aa | Total Histidines: 27 | Max Consecutive His: 2 C-terminal 25aa: IDMQETIDETLDFFLRTVDLTDKPS Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.833045+00:00",
+      "source_title": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P77398/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:c403ce05c25d",
+      "source_node": "run:f251b3a3a3",
+      "target_node": "protein:P77398",
+      "relation_type": "TARGETS_CONTAMINANT",
+      "source_id": "uniprot_P77398",
+      "evidence_quote": "UniProt Entry: P77398 (ARNA_ECOLI) Protein Name: Bifunctional polymyxin resistance protein ArnA Gene: arnA Organism: Escherichia coli (strain K12) Sequence Length: 660 aa | Total Histidines: 27 | Max Consecutive His: 2 C-terminal 25aa: IDMQETIDETLDFFLRTVDLTDKPS Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.835221+00:00",
+      "source_title": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P77398/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:866a3a14a00e",
+      "source_node": "run:f251b3a3a3",
+      "target_node": "cond:a6ecd03b7b",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "uniprot_P77398",
+      "evidence_quote": "UniProt Entry: P77398 (ARNA_ECOLI) Protein Name: Bifunctional polymyxin resistance protein ArnA Gene: arnA Organism: Escherichia coli (strain K12) Sequence Length: 660 aa | Total Histidines: 27 | Max Consecutive His: 2 C-terminal 25aa: IDMQETIDETLDFFLRTVDLTDKPS Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.837449+00:00",
+      "source_title": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P77398/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:24d6e6496f9f",
+      "source_node": "run:082b938d72",
+      "target_node": "protein:P10636",
+      "relation_type": "PURIFIES",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "Title: Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.842560+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:8d86ead977f3",
+      "source_node": "run:082b938d72",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "Title: Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.843474+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:ac436b39e14d",
+      "source_node": "run:082b938d72",
+      "target_node": "cond:9e46aa796d",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "Title: Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.845555+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:fdaeab8064ae",
+      "source_node": "run:f98a749206",
+      "target_node": "protein:P10636",
+      "relation_type": "PURIFIES",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "Here, we present an efficient protocol for the purification of endotoxin-free human recombinant tau protein.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.849043+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:8ef022f43fde",
+      "source_node": "run:f98a749206",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "Here, we present an efficient protocol for the purification of endotoxin-free human recombinant tau protein.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.850011+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:8392989a4ba9",
+      "source_node": "run:f98a749206",
+      "target_node": "cond:5dadf5d811",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "Here, we present an efficient protocol for the purification of endotoxin-free human recombinant tau protein.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.852029+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:2b1f04d502c7",
+      "source_node": "run:02ce9b804a",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "coli, followed by on-column Triton X-114-based endotoxin depletion during purification, concentration, residual endotoxin removal, and quality control of the final product.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.855912+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:04be51770ecc",
+      "source_node": "run:02ce9b804a",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "coli, followed by on-column Triton X-114-based endotoxin depletion during purification, concentration, residual endotoxin removal, and quality control of the final product.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.857072+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:948d1e0204bf",
+      "source_node": "run:02ce9b804a",
+      "target_node": "cond:f05e0bd7f0",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "cytiva_669ade6a31",
+      "evidence_quote": "coli, followed by on-column Triton X-114-based endotoxin depletion during purification, concentration, residual endotoxin removal, and quality control of the final product.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.859003+00:00",
+      "source_title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+      "source_url": "https://europepmc.org/article/PMC/PMC13546840",
+      "source_type": "Cytiva",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:8bea15fd1b88",
+      "source_node": "run:565480daee",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W2579982376",
+      "evidence_quote": "Title: Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres Year: 2017 Abstract: A magnetic sorbent based on monodisperse-porous silica microspheres was developed for His-tagged protein purification by immobilized metal affinity chromatography.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.862972+00:00",
+      "source_title": "Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres",
+      "source_url": "https://doi.org/10.1039/c6ra27736e",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:36ac1ae453f4",
+      "source_node": "run:565480daee",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W2579982376",
+      "evidence_quote": "Title: Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres Year: 2017 Abstract: A magnetic sorbent based on monodisperse-porous silica microspheres was developed for His-tagged protein purification by immobilized metal affinity chromatography.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.863920+00:00",
+      "source_title": "Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres",
+      "source_url": "https://doi.org/10.1039/c6ra27736e",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:99c2ca0c0a43",
+      "source_node": "run:565480daee",
+      "target_node": "cond:c66c43387b",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W2579982376",
+      "evidence_quote": "Title: Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres Year: 2017 Abstract: A magnetic sorbent based on monodisperse-porous silica microspheres was developed for His-tagged protein purification by immobilized metal affinity chromatography.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.866082+00:00",
+      "source_title": "Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres",
+      "source_url": "https://doi.org/10.1039/c6ra27736e",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:148a0274952a",
+      "source_node": "run:81e3c48437",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Title: A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification Year: 2024 Abstract: Extremophilic proteins are valuable in various fields, but their expression can be challenging in traditional hosts like Escherichia coli due to misfolding and aggregation.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.870154+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:9adfc6ad699c",
+      "source_node": "run:81e3c48437",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Title: A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification Year: 2024 Abstract: Extremophilic proteins are valuable in various fields, but their expression can be challenging in traditional hosts like Escherichia coli due to misfolding and aggregation.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.871224+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:eb249b23dc63",
+      "source_node": "run:81e3c48437",
+      "target_node": "cond:5962d646ca",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Title: A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification Year: 2024 Abstract: Extremophilic proteins are valuable in various fields, but their expression can be challenging in traditional hosts like Escherichia coli due to misfolding and aggregation.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.873470+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:3210825ed4fd",
+      "source_node": "run:3bffc2944e",
+      "target_node": "protein:P42212",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "This study examined cleavable and non-cleavable purification tags at both the N- and C-termini when fused with the superfolder green fluorescent protein (sfGFP) in H.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.877194+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:7ec73e2833df",
+      "source_node": "run:3bffc2944e",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "This study examined cleavable and non-cleavable purification tags at both the N- and C-termini when fused with the superfolder green fluorescent protein (sfGFP) in H.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.878207+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:d5bf76b28c72",
+      "source_node": "run:3bffc2944e",
+      "target_node": "cond:9bdcfdc5c5",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "This study examined cleavable and non-cleavable purification tags at both the N- and C-termini when fused with the superfolder green fluorescent protein (sfGFP) in H.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.880398+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:3cd5a2e1a79d",
+      "source_node": "run:3c44821022",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Our findings reveal that an N-terminal 8xHis-tag or Strep-tag®II significantly enhances protein production, purity, and yield in H.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.883979+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:53073b965c41",
+      "source_node": "run:3c44821022",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Our findings reveal that an N-terminal 8xHis-tag or Strep-tag®II significantly enhances protein production, purity, and yield in H.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.884990+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:0b737152abe1",
+      "source_node": "run:3c44821022",
+      "target_node": "cond:da47c3daf8",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Our findings reveal that an N-terminal 8xHis-tag or Strep-tag®II significantly enhances protein production, purity, and yield in H.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.887142+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:ac12948ce1a3",
+      "source_node": "run:3c44821022",
+      "target_node": "out:49e35508f9",
+      "relation_type": "ACHIEVED_OUTCOME",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Our findings reveal that an N-terminal 8xHis-tag or Strep-tag®II significantly enhances protein production, purity, and yield in H.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.889433+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:7f112be927c7",
+      "source_node": "run:cb9293e5e6",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Further experiments with mCherry and halophilic alcohol dehydrogenase (ADH) showed improved expression and purification yields when the 8xHis-tag or Strep-tag®II was positioned at the C-terminus for mCherry and at the N-terminus for ADH.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.893559+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:7cc4192f858b",
+      "source_node": "run:cb9293e5e6",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Further experiments with mCherry and halophilic alcohol dehydrogenase (ADH) showed improved expression and purification yields when the 8xHis-tag or Strep-tag®II was positioned at the C-terminus for mCherry and at the N-terminus for ADH.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.894795+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:36cde2b837ef",
+      "source_node": "run:cb9293e5e6",
+      "target_node": "cond:6b5191368a",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Further experiments with mCherry and halophilic alcohol dehydrogenase (ADH) showed improved expression and purification yields when the 8xHis-tag or Strep-tag®II was positioned at the C-terminus for mCherry and at the N-terminus for ADH.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.897079+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:b96e42880684",
+      "source_node": "run:cb9293e5e6",
+      "target_node": "out:b1cc65c793",
+      "relation_type": "ACHIEVED_OUTCOME",
+      "source_id": "openalex_W4399177879",
+      "evidence_quote": "Further experiments with mCherry and halophilic alcohol dehydrogenase (ADH) showed improved expression and purification yields when the 8xHis-tag or Strep-tag®II was positioned at the C-terminus for mCherry and at the N-terminus for ADH.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.899185+00:00",
+      "source_title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+      "source_url": "https://doi.org/10.3389/fmicb.2024.1403623",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:bdfd1db20098",
+      "source_node": "run:895a3dec55",
+      "target_node": "protein:P42212",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "Title: Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia Year: 2016 Abstract: Este trabalho foi realizado como prática integrada da disciplina de Bioquímica no curso de graduação em Ciências Biomédicas, objetivando demonstrar técnicas utilizadas para a purificação da Proteina Fluorescente Verde (GFP).",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.902991+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:90ac9b3de375",
+      "source_node": "run:895a3dec55",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "Title: Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia Year: 2016 Abstract: Este trabalho foi realizado como prática integrada da disciplina de Bioquímica no curso de graduação em Ciências Biomédicas, objetivando demonstrar técnicas utilizadas para a purificação da Proteina Fluorescente Verde (GFP).",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.904041+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:56e8006327e2",
+      "source_node": "run:895a3dec55",
+      "target_node": "cond:3ce837285a",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "Title: Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia Year: 2016 Abstract: Este trabalho foi realizado como prática integrada da disciplina de Bioquímica no curso de graduação em Ciências Biomédicas, objetivando demonstrar técnicas utilizadas para a purificação da Proteina Fluorescente Verde (GFP).",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.906100+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:4071bd095c89",
+      "source_node": "run:da9b28c665",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "Para realização dos experimentos foi utilizada como metodologia principal a Cromatografia de Afinidade por Metal Imobilizado (IMAC).",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.909467+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:72a541fe7d25",
+      "source_node": "run:da9b28c665",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "Para realização dos experimentos foi utilizada como metodologia principal a Cromatografia de Afinidade por Metal Imobilizado (IMAC).",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.910551+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:21d1e30c53de",
+      "source_node": "run:da9b28c665",
+      "target_node": "cond:4f2f2a56ba",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "Para realização dos experimentos foi utilizada como metodologia principal a Cromatografia de Afinidade por Metal Imobilizado (IMAC).",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.912462+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:ce6d2b3017f6",
+      "source_node": "run:37078b6d8c",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "A produção subsequente da proteína marcada com hexahistidina na região N-terminal, facilitou sua purificação pela IMAC.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.916016+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:e57ae65c0c80",
+      "source_node": "run:37078b6d8c",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "A produção subsequente da proteína marcada com hexahistidina na região N-terminal, facilitou sua purificação pela IMAC.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.917126+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:4743a8bfdfc4",
+      "source_node": "run:37078b6d8c",
+      "target_node": "cond:a8916b044b",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "openalex_W2564552863",
+      "evidence_quote": "A produção subsequente da proteína marcada com hexahistidina na região N-terminal, facilitou sua purificação pela IMAC.",
+      "discovered_round": 1,
+      "created_at": "2026-11-22T15:26:40.919357+00:00",
+      "source_title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+      "source_url": "https://doi.org/10.16923/reb.v14i3.638",
+      "source_type": "OpenAlex",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:f6283ed0c322",
+      "source_node": "run:8810964566",
+      "target_node": "protein:recombinant_protein",
+      "relation_type": "PURIFIES",
+      "source_id": "uniprot_P10371",
+      "evidence_quote": "UniProt Entry: P10371 (HIS4_ECOLI) Protein Name: 1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase Gene: hisA Organism: Escherichia coli (strain K12) Sequence Length: 245 aa | Total Histidines: 3 | Max Consecutive His: 1 C-terminal 25aa: GVIVGRALLEGKFTVKEAIACWQNA Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 2,
+      "created_at": "2026-11-22T15:28:19.470310+00:00",
+      "source_title": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase (P10371)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P10371/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:4c38a6a8f8c1",
+      "source_node": "run:8810964566",
+      "target_node": "method:IMAC",
+      "relation_type": "USES_METHOD",
+      "source_id": "uniprot_P10371",
+      "evidence_quote": "UniProt Entry: P10371 (HIS4_ECOLI) Protein Name: 1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase Gene: hisA Organism: Escherichia coli (strain K12) Sequence Length: 245 aa | Total Histidines: 3 | Max Consecutive His: 1 C-terminal 25aa: GVIVGRALLEGKFTVKEAIACWQNA Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 2,
+      "created_at": "2026-11-22T15:28:19.472739+00:00",
+      "source_title": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase (P10371)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P10371/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    },
+    {
+      "edge_id": "edge:5a56790568bd",
+      "source_node": "run:8810964566",
+      "target_node": "cond:6aff6dc01b",
+      "relation_type": "UNDER_CONDITION",
+      "source_id": "uniprot_P10371",
+      "evidence_quote": "UniProt Entry: P10371 (HIS4_ECOLI) Protein Name: 1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase Gene: hisA Organism: Escherichia coli (strain K12) Sequence Length: 245 aa | Total Histidines: 3 | Max Consecutive His: 1 C-terminal 25aa: GVIVGRALLEGKFTVKEAIACWQNA Native Metal-Binding Contaminant Risk: Low",
+      "discovered_round": 2,
+      "created_at": "2026-11-22T15:28:19.477367+00:00",
+      "source_title": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase (P10371)",
+      "source_url": "https://www.uniprot.org/uniprotkb/P10371/entry",
+      "source_type": "UniProt",
+      "properties": {}
+    }
+  ],
+  "stats": {
+    "total_nodes": 39,
+    "total_edges": 49
+  }
+}

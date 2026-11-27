@@ -1,0 +1,622 @@
+[
+  {
+    "round_num": 1,
+    "status": "SUCCESS",
+    "search_rationale": "第 1 轮（冷启动骨架构建）：获取大肠杆菌内源高组氨酸杂蛋白（SlyD/ArnA）与模型蛋白（GFP）的 UniProt FASTA 数据，解析 Cytiva 官方纯化手册条件，并检索 OpenAlex 核心 6xHis-tag IMAC 纯化文献。",
+    "new_sources_count": 7,
+    "new_nodes_count": 36,
+    "new_edges_count": 46,
+    "refinements_count": 5,
+    "summary_note": "第 1 轮完成：新增 7 份去重资料，新增 36 个节点、46 条关系，完成 5 处跨源对齐或属性补全。",
+    "executed_at": "2026-11-22T15:26:40.923014+00:00",
+    "queries": {
+      "openalex_query": "6xHis tag protein purification IMAC imidazole",
+      "uniprot_query": "(accession:P42212) OR (accession:P0A9K9) OR (accession:P77398)",
+      "cytiva_keywords": [
+        "HisTrap",
+        "IMAC",
+        "imidazole"
+      ]
+    },
+    "delta_nodes": [
+      {
+        "action": "created",
+        "node_id": "protein:P0A9K9",
+        "label": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+        "node_type": "Protein"
+      },
+      {
+        "action": "created",
+        "node_id": "method:IMAC",
+        "label": "IMAC (Immobilized Metal Affinity Chromatography)",
+        "node_type": "PurificationMethod"
+      },
+      {
+        "action": "created",
+        "node_id": "run:a1275b8db9",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:5b844037d1",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "protein:P42212",
+        "label": "Green fluorescent protein (P42212)",
+        "node_type": "Protein"
+      },
+      {
+        "action": "created",
+        "node_id": "run:c8ae7630e3",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:77e71394b5",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "protein:P77398",
+        "label": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+        "node_type": "Protein"
+      },
+      {
+        "action": "created",
+        "node_id": "run:f251b3a3a3",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:a6ecd03b7b",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "protein:P10636",
+        "label": "Microtubule-associated protein tau (P10636)",
+        "node_type": "Protein"
+      },
+      {
+        "action": "created",
+        "node_id": "run:082b938d72",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:9e46aa796d",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "run:f98a749206",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:5dadf5d811",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "protein:recombinant_protein",
+        "label": "His-tagged Recombinant Protein",
+        "node_type": "Protein"
+      },
+      {
+        "action": "created",
+        "node_id": "run:02ce9b804a",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:f05e0bd7f0",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "run:565480daee",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:c66c43387b",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "run:81e3c48437",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:5962d646ca",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "run:3bffc2944e",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:9bdcfdc5c5",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "run:3c44821022",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:da47c3daf8",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "out:49e35508f9",
+        "label": "Out (Purity:purity, and yield in h | Yield:yield in h | Act:null)",
+        "node_type": "OutcomeMetric"
+      },
+      {
+        "action": "created",
+        "node_id": "run:cb9293e5e6",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:6b5191368a",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "out:b1cc65c793",
+        "label": "Out (Purity:null | Yield:yields when the 8xhis-tag or strep-tag®ii was | Act:null)",
+        "node_type": "OutcomeMetric"
+      },
+      {
+        "action": "created",
+        "node_id": "run:895a3dec55",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:3ce837285a",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "run:da9b28c665",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:4f2f2a56ba",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      },
+      {
+        "action": "created",
+        "node_id": "run:37078b6d8c",
+        "label": "Run (IMAC | R1)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:a8916b044b",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      }
+    ],
+    "delta_edges": [
+      {
+        "edge_id": "edge:d48dc98be824",
+        "relation": "PURIFIES",
+        "from": "run:a1275b8db9",
+        "to": "protein:P0A9K9"
+      },
+      {
+        "edge_id": "edge:71f3020663e1",
+        "relation": "USES_METHOD",
+        "from": "run:a1275b8db9",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:eca02f684b3c",
+        "relation": "TARGETS_CONTAMINANT",
+        "from": "run:a1275b8db9",
+        "to": "protein:P0A9K9"
+      },
+      {
+        "edge_id": "edge:84b5eba5d608",
+        "relation": "UNDER_CONDITION",
+        "from": "run:a1275b8db9",
+        "to": "cond:5b844037d1"
+      },
+      {
+        "edge_id": "edge:5e12b10be1dd",
+        "relation": "PURIFIES",
+        "from": "run:c8ae7630e3",
+        "to": "protein:P42212"
+      },
+      {
+        "edge_id": "edge:ff1fe9d0b3e9",
+        "relation": "USES_METHOD",
+        "from": "run:c8ae7630e3",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:918518e94229",
+        "relation": "UNDER_CONDITION",
+        "from": "run:c8ae7630e3",
+        "to": "cond:77e71394b5"
+      },
+      {
+        "edge_id": "edge:5a9016a1d22b",
+        "relation": "PURIFIES",
+        "from": "run:f251b3a3a3",
+        "to": "protein:P77398"
+      },
+      {
+        "edge_id": "edge:81e4959c31c2",
+        "relation": "USES_METHOD",
+        "from": "run:f251b3a3a3",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:c403ce05c25d",
+        "relation": "TARGETS_CONTAMINANT",
+        "from": "run:f251b3a3a3",
+        "to": "protein:P77398"
+      },
+      {
+        "edge_id": "edge:866a3a14a00e",
+        "relation": "UNDER_CONDITION",
+        "from": "run:f251b3a3a3",
+        "to": "cond:a6ecd03b7b"
+      },
+      {
+        "edge_id": "edge:24d6e6496f9f",
+        "relation": "PURIFIES",
+        "from": "run:082b938d72",
+        "to": "protein:P10636"
+      },
+      {
+        "edge_id": "edge:8d86ead977f3",
+        "relation": "USES_METHOD",
+        "from": "run:082b938d72",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:ac436b39e14d",
+        "relation": "UNDER_CONDITION",
+        "from": "run:082b938d72",
+        "to": "cond:9e46aa796d"
+      },
+      {
+        "edge_id": "edge:fdaeab8064ae",
+        "relation": "PURIFIES",
+        "from": "run:f98a749206",
+        "to": "protein:P10636"
+      },
+      {
+        "edge_id": "edge:8ef022f43fde",
+        "relation": "USES_METHOD",
+        "from": "run:f98a749206",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:8392989a4ba9",
+        "relation": "UNDER_CONDITION",
+        "from": "run:f98a749206",
+        "to": "cond:5dadf5d811"
+      },
+      {
+        "edge_id": "edge:2b1f04d502c7",
+        "relation": "PURIFIES",
+        "from": "run:02ce9b804a",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:04be51770ecc",
+        "relation": "USES_METHOD",
+        "from": "run:02ce9b804a",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:948d1e0204bf",
+        "relation": "UNDER_CONDITION",
+        "from": "run:02ce9b804a",
+        "to": "cond:f05e0bd7f0"
+      },
+      {
+        "edge_id": "edge:8bea15fd1b88",
+        "relation": "PURIFIES",
+        "from": "run:565480daee",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:36ac1ae453f4",
+        "relation": "USES_METHOD",
+        "from": "run:565480daee",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:99c2ca0c0a43",
+        "relation": "UNDER_CONDITION",
+        "from": "run:565480daee",
+        "to": "cond:c66c43387b"
+      },
+      {
+        "edge_id": "edge:148a0274952a",
+        "relation": "PURIFIES",
+        "from": "run:81e3c48437",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:9adfc6ad699c",
+        "relation": "USES_METHOD",
+        "from": "run:81e3c48437",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:eb249b23dc63",
+        "relation": "UNDER_CONDITION",
+        "from": "run:81e3c48437",
+        "to": "cond:5962d646ca"
+      },
+      {
+        "edge_id": "edge:3210825ed4fd",
+        "relation": "PURIFIES",
+        "from": "run:3bffc2944e",
+        "to": "protein:P42212"
+      },
+      {
+        "edge_id": "edge:7ec73e2833df",
+        "relation": "USES_METHOD",
+        "from": "run:3bffc2944e",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:d5bf76b28c72",
+        "relation": "UNDER_CONDITION",
+        "from": "run:3bffc2944e",
+        "to": "cond:9bdcfdc5c5"
+      },
+      {
+        "edge_id": "edge:3cd5a2e1a79d",
+        "relation": "PURIFIES",
+        "from": "run:3c44821022",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:53073b965c41",
+        "relation": "USES_METHOD",
+        "from": "run:3c44821022",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:0b737152abe1",
+        "relation": "UNDER_CONDITION",
+        "from": "run:3c44821022",
+        "to": "cond:da47c3daf8"
+      },
+      {
+        "edge_id": "edge:ac12948ce1a3",
+        "relation": "ACHIEVED_OUTCOME",
+        "from": "run:3c44821022",
+        "to": "out:49e35508f9"
+      },
+      {
+        "edge_id": "edge:7f112be927c7",
+        "relation": "PURIFIES",
+        "from": "run:cb9293e5e6",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:7cc4192f858b",
+        "relation": "USES_METHOD",
+        "from": "run:cb9293e5e6",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:36cde2b837ef",
+        "relation": "UNDER_CONDITION",
+        "from": "run:cb9293e5e6",
+        "to": "cond:6b5191368a"
+      },
+      {
+        "edge_id": "edge:b96e42880684",
+        "relation": "ACHIEVED_OUTCOME",
+        "from": "run:cb9293e5e6",
+        "to": "out:b1cc65c793"
+      },
+      {
+        "edge_id": "edge:bdfd1db20098",
+        "relation": "PURIFIES",
+        "from": "run:895a3dec55",
+        "to": "protein:P42212"
+      },
+      {
+        "edge_id": "edge:90ac9b3de375",
+        "relation": "USES_METHOD",
+        "from": "run:895a3dec55",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:56e8006327e2",
+        "relation": "UNDER_CONDITION",
+        "from": "run:895a3dec55",
+        "to": "cond:3ce837285a"
+      },
+      {
+        "edge_id": "edge:4071bd095c89",
+        "relation": "PURIFIES",
+        "from": "run:da9b28c665",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:72a541fe7d25",
+        "relation": "USES_METHOD",
+        "from": "run:da9b28c665",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:21d1e30c53de",
+        "relation": "UNDER_CONDITION",
+        "from": "run:da9b28c665",
+        "to": "cond:4f2f2a56ba"
+      },
+      {
+        "edge_id": "edge:ce6d2b3017f6",
+        "relation": "PURIFIES",
+        "from": "run:37078b6d8c",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:e57ae65c0c80",
+        "relation": "USES_METHOD",
+        "from": "run:37078b6d8c",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:4743a8bfdfc4",
+        "relation": "UNDER_CONDITION",
+        "from": "run:37078b6d8c",
+        "to": "cond:a8916b044b"
+      }
+    ],
+    "refinements": [
+      {
+        "action": "refined",
+        "node_id": "protein:P0A9K9",
+        "label": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+        "details": [
+          "补全属性 role: host_contaminant"
+        ]
+      },
+      {
+        "action": "refined",
+        "node_id": "protein:P77398",
+        "label": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+        "details": [
+          "补全属性 role: host_contaminant"
+        ]
+      },
+      {
+        "action": "refined",
+        "node_id": "method:IMAC",
+        "label": "IMAC (Immobilized Metal Affinity Chromatography)",
+        "details": [
+          "跨源实体对齐融合 (UniProt + Cytiva)"
+        ]
+      },
+      {
+        "action": "refined",
+        "node_id": "protein:recombinant_protein",
+        "label": "His-tagged Recombinant Protein",
+        "details": [
+          "跨源实体对齐融合 (Cytiva + OpenAlex)"
+        ]
+      },
+      {
+        "action": "refined",
+        "node_id": "protein:P42212",
+        "label": "Green fluorescent protein (P42212)",
+        "details": [
+          "跨源实体对齐融合 (UniProt + OpenAlex)"
+        ]
+      }
+    ]
+  },
+  {
+    "round_num": 2,
+    "status": "SUCCESS",
+    "search_rationale": "第 1 轮已建立基础蛋白、Cytiva 手册与通用 IMAC 文献骨架，但发现部分实验缺少明确的咪唑洗涤/洗脱浓度，且 UniProt 识别出的大肠杆菌内源杂蛋白（如 SlyD）尚缺针对性纯化优化证据。因此第 2 轮定向检索 SlyD/咪唑洗涤优化文献及 HisTrap 化学耐受手册。",
+    "new_sources_count": 1,
+    "new_nodes_count": 3,
+    "new_edges_count": 3,
+    "refinements_count": 0,
+    "summary_note": "第 2 轮完成：新增 1 份去重资料，新增 3 个节点、3 条关系，完成 0 处跨源对齐或属性补全。",
+    "executed_at": "2026-11-22T15:28:19.485074+00:00",
+    "queries": {
+      "openalex_query": "6xHis tag purification imidazole wash SlyD purity",
+      "uniprot_query": "(gene:slyd AND organism_id:83333) OR (gene:hisA AND organism_id:83333)",
+      "cytiva_keywords": [
+        "HisTrap",
+        "imidazole",
+        "wash",
+        "purity"
+      ]
+    },
+    "delta_nodes": [
+      {
+        "action": "created",
+        "node_id": "protein:P10371",
+        "label": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase (P10371)",
+        "node_type": "Protein"
+      },
+      {
+        "action": "created",
+        "node_id": "run:8810964566",
+        "label": "Run (IMAC | R2)",
+        "node_type": "ExperimentRun"
+      },
+      {
+        "action": "created",
+        "node_id": "cond:6aff6dc01b",
+        "label": "Cond (Wash:null | Elute:null | Denat:null)",
+        "node_type": "ConditionSet"
+      }
+    ],
+    "delta_edges": [
+      {
+        "edge_id": "edge:f6283ed0c322",
+        "relation": "PURIFIES",
+        "from": "run:8810964566",
+        "to": "protein:recombinant_protein"
+      },
+      {
+        "edge_id": "edge:4c38a6a8f8c1",
+        "relation": "USES_METHOD",
+        "from": "run:8810964566",
+        "to": "method:IMAC"
+      },
+      {
+        "edge_id": "edge:5a56790568bd",
+        "relation": "UNDER_CONDITION",
+        "from": "run:8810964566",
+        "to": "cond:6aff6dc01b"
+      }
+    ],
+    "refinements": []
+  }
+]

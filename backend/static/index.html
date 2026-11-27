@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>组氨酸标签蛋白纯化知识图谱 (His-Tag Purification KG)</title>
+  <script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+  <style>
+    :root {
+      --bg-app: #f4f6f9;
+      --bg-panel: #ffffff;
+      --border-color: #e2e8f0;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #059669;
+      --warning: #d97706;
+      --danger: #dc2626;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-app);
+      color: var(--text-main);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    header {
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .brand h1 { font-size: 16px; font-weight: 700; color: #0f172a; }
+    .brand p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .iter-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    button {
+      border: 1px solid var(--border-color);
+      background: #fff;
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button:hover:not(:disabled) { background: #f8fafc; border-color: #cbd5e1; }
+    button:disabled { opacity: 0.55; cursor: not-allowed; }
+    button.btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+    button.btn-primary:hover:not(:disabled) { background: var(--primary-hover); }
+    button.btn-danger { color: var(--danger); border-color: #fecaca; }
+    .workspace { display: grid; grid-template-columns: 320px 1fr 370px; flex: 1; overflow: hidden; }
+    .panel { background: var(--bg-panel); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; }
+    .panel:last-child { border-right: none; border-left: 1px solid var(--border-color); }
+    .panel-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 13px;
+      font-weight: 700;
+      background: #f8fafc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .panel-body { padding: 14px 16px; overflow-y: auto; flex: 1; }
+    .filter-group { margin-bottom: 10px; }
+    .filter-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+    select { width: 100%; padding: 6px 8px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 13px; background: #fff; }
+    .tabs { display: flex; border-bottom: 1px solid var(--border-color); background: #f8fafc; }
+    .tab { flex: 1; text-align: center; padding: 9px 4px; font-size: 12px; font-weight: 600; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; }
+    .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: #fff; }
+    .card { border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; background: #fff; font-size: 12px; }
+    .card-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; color: #0f172a; line-height: 1.4; }
+    .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 4px; margin-bottom: 2px; }
+    .badge-uniprot { background: #dbeafe; color: #1e40af; }
+    .badge-cytiva { background: #fef3c7; color: #92400e; }
+    .badge-openalex { background: #d1fae5; color: #065f46; }
+    .badge-publisher { background: #e0e7ff; color: #3730a3; }
+    .badge-multi { background: #ede9fe; color: #5b21b6; }
+    .badge-round { background: #f1f5f9; color: #334155; }
+    .provenance-box {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .provenance-row + .provenance-row {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .provenance-label-channel { font-weight: 600; color: #065f46; }
+    .provenance-label-pub { font-weight: 600; color: #3730a3; }
+    .provenance-label-oa { font-weight: 600; color: var(--success); }
+    .break-url { word-break: break-all; }
+    .canvas-wrapper { position: relative; display: flex; flex-direction: column; background: #fafbfc; overflow: hidden; }
+    #cy { width: 100%; flex: 1; }
+    .legend-bar {
+      background: rgba(255, 255, 255, 0.94);
+      border-top: 1px solid var(--border-color);
+      padding: 8px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      align-items: center;
+    }
+    .legend-item { display: flex; align-items: center; gap: 5px; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .quote-box {
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #451a03;
+      margin: 8px 0;
+      word-break: break-word;
+    }
+    .kv-table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 12px; }
+    .kv-table td { padding: 5px 6px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+    .kv-table td:first-child { font-weight: 600; color: var(--text-muted); width: 38%; }
+    .null-tag { color: #94a3b8; font-style: italic; }
+    #loading-banner {
+      display: none;
+      background: #eff6ff;
+      color: #1e40af;
+      border-bottom: 1px solid #bfdbfe;
+      padding: 6px 20px;
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>🧬 组氨酸标签蛋白纯化知识图谱 (His-Tag Purification KG)</h1>
+      <p>多源融合（UniProt FASTA + Cytiva 手册 + OpenAlex 文献）与缺口驱动多轮闭环演进</p>
+    </div>
+    <div class="iter-controls">
+      <button class="btn-primary" onclick="triggerRound(1)">▶ 执行第 1 轮 (骨架构建)</button>
+      <button class="btn-primary" onclick="triggerRound(2)">▶ 执行第 2 轮 (缺口补全)</button>
+      <button class="btn-primary" onclick="triggerRound(3)">▶ 执行第 3 轮 (边界拓展)</button>
+      <button class="btn-primary" onclick="triggerRound(4)">▶ 执行第 4 轮 (填料对比)</button>
+      <button class="btn-danger" onclick="resetKG()">↺ 清空重置</button>
+    </div>
+  </header>
+
+  <div id="loading-banner">⏳ 正在执行真实多源数据采集、防幻觉抽取与跨源实体对齐，请稍候...</div>
+
+  <div class="workspace">
+    <aside class="panel">
+      <div class="panel-header">
+        <span>🔍 图谱筛选器</span>
+        <span id="graph-stats-badge" class="badge badge-round">0 节点 / 0 边</span>
+      </div>
+      <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-color); background: #fff;">
+        <div class="filter-group">
+          <label>按蛋白筛选 (对齐 UniProt ID)</label>
+          <select id="protein-filter" onchange="loadGraph()">
+            <option value="ALL">全部蛋白 (All Proteins)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>按纯化方法筛选</label>
+          <select id="method-filter" onchange="loadGraph()">
+            <option value="ALL">全部纯化方法 (All Methods)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>按填料/柱材筛选 (ResinMaterial)</label>
+          <select id="resin-filter" onchange="applyResinFilter()">
+            <option value="ALL">全部填料/柱材 (All Resins)</option>
+            <option value="ONLY_RESINS">仅显示全部填料及 USES_RESIN 证据链</option>
+          </select>
+        </div>
+        <div class="filter-group" style="margin-bottom: 0;">
+          <label>演进时间轴 (截至轮次)</label>
+          <select id="round-filter" onchange="loadGraph()">
+            <option value="">全部已执行轮次</option>
+            <option value="1">仅第 1 轮 (Round 1)</option>
+            <option value="2">截至第 2 轮 (Round 1-2)</option>
+            <option value="3">截至第 3 轮 (Round 1-3)</option>
+            <option value="4">截至第 4 轮 (Round 1-4)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" id="tab-logs" onclick="switchLeftTab('logs')">多轮迭代记录 (<span id="count-logs">0</span>)</div>
+        <div class="tab" id="tab-sources" onclick="switchLeftTab('sources')">来源资料库 (<span id="count-sources">0</span>)</div>
+      </div>
+
+      <div class="panel-body" id="left-list-container"></div>
+    </aside>
+
+    <main class="canvas-wrapper">
+      <div id="cy"></div>
+      <div class="legend-bar">
+        <strong>图例：</strong>
+        <span class="legend-item"><span class="dot" style="background:#2563eb;"></span>蛋白</span>
+        <span class="legend-item"><span class="dot" style="background:#7c3aed;"></span>纯化方法</span>
+        <span class="legend-item"><span class="dot" style="background:#d97706;"></span>填料/柱材</span>
+        <span class="legend-item"><span class="dot" style="background:#059669;"></span>实验记录</span>
+        <span class="legend-item"><span class="dot" style="background:#0891b2;"></span>实验条件</span>
+        <span class="legend-item"><span class="dot" style="background:#e11d48;"></span>纯化结果</span>
+        <span style="margin-left:auto; color:var(--text-muted);">💡 点击任意连线或节点查看原文证据</span>
+      </div>
+    </main>
+
+    <aside class="panel">
+      <div class="panel-header">
+        <span>📑 原文证据与属性详情</span>
+        <button style="padding:2px 8px; font-size:11px;" onclick="cy && cy.fit()">居中画布</button>
+      </div>
+      <div class="panel-body" id="inspector-body">
+        <div class="card" style="background:#f8fafc;">
+          <div class="card-title">操作指引</div>
+          <p style="color:var(--text-muted); line-height:1.6;">
+            1. <strong>点击图谱中的任意连线（Edge）</strong>：查看来源类型、原文逐字引证片段及直达 PDF 对应页码的链接。<br/>
+            2. <strong>点击任意节点（Node）</strong>：查看结构化属性与具体条件参数（未写明条件严格标记为 <code>null</code>）。<br/>
+            3. <strong>筛选填料/柱材</strong>：在左侧选择 <code>Ni Sepharose</code>、<code>HisTrap</code>、<code>Ni-IDA</code> 或 <code>Ni-NTA</code>，查看对应的 <code>USES_RESIN</code> 原文证据链。
+          </p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    /* global cytoscape */
+    let cy = null;
+    let currentLeftTab = 'logs';
+    let cachedLogs = [];
+    let cachedSources = [];
+    const NODE_COLORS = {
+      Protein: '#2563eb',
+      PurificationMethod: '#7c3aed',
+      ResinMaterial: '#d97706',
+      ExperimentRun: '#059669',
+      ConditionSet: '#0891b2',
+      OutcomeMetric: '#e11d48',
+      AffinityTag: '#4f46e5'
+    };
+
+    function renderLink(url, label) {
+      if (!url) {
+        return '<span class="null-tag">暂无链接</span>';
+      }
+      const safeUrl = escapeHtml(url);
+      const safeLabel = escapeHtml(label || url);
+      return '<a href="' + safeUrl + '" target="_blank" rel="noopener noreferrer">' + safeLabel + ' ↗</a>';
+    }
+
+    function buildProvenanceHtml(record, fallbackUrl) {
+      const channel = record.collection_channel || record.source_type || 'Unknown';
+      const pubSource = record.publication_source || '';
+      const rawUrl = fallbackUrl || record.source_url || record.url || '';
+      const docTitle = record.source_title || record.title || '';
+      const meta = record.source_metadata || record.metadata || {};
+
+      let channelUrl = record.channel_url || '';
+      let channelLinkText = channelUrl;
+      if (!channelUrl && channel === 'OpenAlex') {
+        if (rawUrl.indexOf('openalex.org') !== -1) {
+          channelUrl = rawUrl;
+          channelLinkText = rawUrl;
+        } else if (record.source_id && record.source_id.indexOf('openalex_') === 0) {
+          channelUrl = 'https://openalex.org/' + record.source_id.replace('openalex_', '');
+          channelLinkText = channelUrl;
+        } else if (docTitle) {
+          channelUrl = 'https://openalex.org/works?filter=title.search:' + encodeURIComponent(docTitle);
+          channelLinkText = '在 OpenAlex 中查看该文献元数据 (' + docTitle.slice(0, 32) + '...)';
+        } else {
+          channelUrl = 'https://openalex.org';
+          channelLinkText = 'https://openalex.org';
+        }
+      }
+
+      let publisherUrl = record.publisher_url || '';
+      if (!publisherUrl && rawUrl && rawUrl.indexOf('openalex.org') === -1) {
+        publisherUrl = rawUrl;
+      }
+
+      const oaPdfUrl = record.oa_pdf_url || '';
+
+      if (channel === 'OpenAlex') {
+        const pubNameText = (pubSource && pubSource !== '原始出版商 (DOI)')
+          ? escapeHtml(pubSource)
+          : '原始出版商 / DOI 官网';
+
+        let oaRow = '';
+        if (oaPdfUrl) {
+          oaRow = '<div class="provenance-row">' +
+            '<span class="provenance-label-oa">📄 免费开放获取全文 (OA)：</span><br/>' +
+            '<span class="break-url">' + renderLink(oaPdfUrl, oaPdfUrl) + '</span>' +
+            '</div>';
+        }
+
+        return '<div class="provenance-box">' +
+          '<div class="provenance-row">' +
+          '<span class="provenance-label-channel">📡 采集渠道 (OpenAlex)：</span><br/>' +
+          '<span class="break-url">' + renderLink(channelUrl, channelLinkText) + '</span>' +
+          '</div>' +
+          '<div class="provenance-row">' +
+          '<span class="provenance-label-pub">🏛️ 出版来源 (' + pubNameText + ')：</span><br/>' +
+          '<span class="break-url">' + renderLink(publisherUrl, publisherUrl) + '</span>' +
+          '</div>' +
+          oaRow +
+          '</div>';
+      }
+
+      if (channel === 'Cytiva') {
+        const defaultPdfFallback = 'https://cdn.cytivalifesciences.com/api/public/content/digi-11495-pdf#page=29';
+        const catalogUrl = meta.catalog_origin || record.catalog_url || record.channel_url || 'https://www.cytivalifesciences.com/en/us/support/handbooks';
+        let candidatePdf = record.pdf_endpoint || meta.pdf_endpoint || meta.oa_pdf_url || rawUrl || '';
+        const isBrokenCdn = candidatePdf.indexOf('cdn.cytivalifesciences.com/api/public/content/digi-') !== -1
+          && candidatePdf.indexOf('digi-11495-pdf') === -1
+          && candidatePdf.indexOf('context=') === -1;
+        let pdfUrl = (candidatePdf && !isBrokenCdn) ? candidatePdf : defaultPdfFallback;
+
+        if (pdfUrl.indexOf('digi-11495-pdf') !== -1) {
+          const pageMatch = (record.evidence_quote || '').match(/\[Page\s+(\d+)\]/i);
+          const hashMatchExisting = pdfUrl.match(/#page=(\d+)/);
+          let targetPage = pageMatch
+            ? parseInt(pageMatch[1], 10)
+            : (hashMatchExisting ? parseInt(hashMatchExisting[1], 10) : (meta.page_num || 29));
+          if (!targetPage || targetPage < 29) {
+            targetPage = 29;
+          }
+          pdfUrl = pdfUrl.split('#')[0] + '#page=' + targetPage;
+        }
+
+        const hashMatch = pdfUrl.match(/#page=(\d+)/);
+        const pageBadge = hashMatch ? ' (直达第 ' + hashMatch[1] + ' 页)' : '';
+
+        return '<div class="provenance-box">' +
+          '<div class="provenance-row">' +
+          '<span class="provenance-label-channel">🏛️ Cytiva 官方手册目录：</span><br/>' +
+          '<span class="break-url">' + renderLink(catalogUrl, catalogUrl) + '</span>' +
+          '</div>' +
+          '<div class="provenance-row">' +
+          '<span class="provenance-label-oa">📄 His-tag 官方手册 PDF' + pageBadge + '：</span><br/>' +
+          '<span class="break-url">' + renderLink(pdfUrl, pdfUrl) + '</span>' +
+          '</div>' +
+          '</div>';
+      }
+
+      if (rawUrl) {
+        return '<p class="break-url" style="margin-top:4px;">' + renderLink(rawUrl, rawUrl) + '</p>';
+      }
+      return '';
+    }
+
+    function initCytoscape(nodes, edges) {
+      const elements = [];
+      nodes.forEach(function (n) {
+        const isMulti = n.primary_source_type === 'Multi-Source';
+        elements.push({
+          data: {
+            id: n.node_id,
+            label: n.label.length > 26 ? n.label.slice(0, 24) + '...' : n.label,
+            fullLabel: n.label,
+            nodeType: n.node_type,
+            sourceType: n.primary_source_type,
+            round: n.discovered_round,
+            updatedRound: n.updated_round,
+            properties: n.properties,
+            color: NODE_COLORS[n.node_type] || '#475569',
+            borderWidth: isMulti ? 4 : 2,
+            borderColor: isMulti ? '#f59e0b' : '#ffffff'
+          }
+        });
+      });
+      edges.forEach(function (e) {
+        elements.push({
+          data: {
+            id: e.edge_id,
+            source: e.source_node,
+            target: e.target_node,
+            label: e.relation_type,
+            sourceType: e.source_type,
+            sourceTitle: e.source_title,
+            sourceUrl: e.source_url,
+            quote: e.evidence_quote,
+            round: e.discovered_round
+          }
+        });
+      });
+      if (cy) {
+        cy.destroy();
+      }
+      cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: elements,
+        style: [
+          {
+            selector: 'node',
+            style: {
+              'background-color': 'data(color)',
+              'label': 'data(label)',
+              'color': '#1e293b',
+              'font-size': '10px',
+              'font-weight': '600',
+              'text-valign': 'bottom',
+              'text-margin-y': '4px',
+              'width': 26,
+              'height': 26,
+              'border-width': 'data(borderWidth)',
+              'border-color': 'data(borderColor)',
+              'text-wrap': 'wrap',
+              'text-max-width': '110px'
+            }
+          },
+          { selector: 'node[nodeType = "Protein"]', style: { 'width': 36, 'height': 36, 'font-size': '11px' } },
+          {
+            selector: 'node[nodeType = "ResinMaterial"]',
+            style: {
+              'shape': 'diamond',
+              'width': 34,
+              'height': 34,
+              'font-size': '11px',
+              'font-weight': '700',
+              'color': '#92400e'
+            }
+          },
+          {
+            selector: 'edge',
+            style: {
+              'width': 2,
+              'line-color': '#cbd5e1',
+              'target-arrow-color': '#94a3b8',
+              'target-arrow-shape': 'triangle',
+              'curve-style': 'bezier',
+              'label': 'data(label)',
+              'font-size': '8.5px',
+              'color': '#64748b',
+              'text-rotation': 'autorotate',
+              'text-background-color': '#ffffff',
+              'text-background-opacity': 0.85,
+              'text-background-padding': '2px'
+            }
+          },
+          {
+            selector: 'edge[label = "USES_RESIN"], edge[label = "USES_MATERIAL"]',
+            style: {
+              'width': 2.5,
+              'line-color': '#f59e0b',
+              'target-arrow-color': '#d97706',
+              'color': '#b45309',
+              'font-weight': '600'
+            }
+          },
+          { selector: 'edge:selected', style: { 'width': 4, 'line-color': '#f59e0b', 'target-arrow-color': '#f59e0b', 'color': '#b45309', 'font-weight': 'bold' } },
+          { selector: 'node:selected', style: { 'border-width': 4, 'border-color': '#0f172a' } }
+        ],
+        layout: { name: 'cose', animate: false, nodeRepulsion: 9000, idealEdgeLength: 95, padding: 30 }
+      });
+      cy.on('tap', 'edge', async function (evt) { await showEdgeEvidence(evt.target.data().id); });
+      cy.on('tap', 'node', function (evt) { showNodeDetails(evt.target.data()); });
+    }
+
+    function applyResinFilter() {
+      if (!cy) return;
+      const val = document.getElementById('resin-filter').value;
+      if (!val || val === 'ALL') {
+        cy.elements().style('display', 'element');
+        cy.fit(undefined, 30);
+        return;
+      }
+
+      let targetResins;
+      if (val === 'ONLY_RESINS') {
+        targetResins = cy.nodes('[nodeType = "ResinMaterial"]');
+      } else {
+        targetResins = cy.nodes().filter(function (n) {
+          return n.id() === val;
+        });
+      }
+
+      const connectedEdges = targetResins.connectedEdges();
+      const connectedRuns = connectedEdges.connectedNodes();
+      const visibleSet = targetResins.union(connectedEdges).union(connectedRuns);
+
+      cy.elements().style('display', 'none');
+      visibleSet.style('display', 'element');
+      if (visibleSet.length > 0) {
+        cy.fit(visibleSet, 50);
+      }
+    }
+
+    async function showEdgeEvidence(edgeId) {
+      const inspector = document.getElementById('inspector-body');
+      inspector.innerHTML = '<p style="color:var(--text-muted);">正在加载原文证据...</p>';
+      try {
+        const resp = await fetch('/api/evidence/' + encodeURIComponent(edgeId));
+        const data = await resp.json();
+        const badgeClass = data.source_type === 'UniProt' ? 'badge-uniprot' : data.source_type === 'Cytiva' ? 'badge-cytiva' : 'badge-openalex';
+        const channelText = escapeHtml(data.collection_channel || data.source_type || '');
+        const pubBadge = (data.publication_source && data.publication_source !== data.source_type)
+          ? '<span class="badge badge-publisher">' + escapeHtml(data.publication_source) + '</span>'
+          : '';
+        const provenanceHtml = buildProvenanceHtml(data, data.source_url);
+
+        inspector.innerHTML =
+          '<div class="card">' +
+          '<div style="margin-bottom:6px;">' +
+          '<span class="badge ' + badgeClass + '">渠道: ' + channelText + '</span>' +
+          pubBadge +
+          '<span class="badge badge-round">第 ' + escapeHtml(String(data.discovered_round)) + ' 轮发现</span>' +
+          '</div>' +
+          '<div class="card-title">关系：' + escapeHtml(data.relation_type) + '</div>' +
+          '<div style="font-size:11.5px; color:var(--text-muted); margin-bottom:8px;"><code>' + escapeHtml(data.source_node) + '</code> → <code>' + escapeHtml(data.target_node) + '</code></div>' +
+          '<div style="font-weight:600; font-size:12px; margin-top:8px;">📌 原文逐字引证 (Verbatim Evidence)：</div>' +
+          '<div class="quote-box">“' + escapeHtml(data.evidence_quote) + '”</div>' +
+          '<div style="font-weight:600; font-size:12px; margin-top:10px;">🔗 文献溯源与双渠道链接：</div>' +
+          '<p style="margin:4px 0; font-weight:600;">' + escapeHtml(data.source_title) + '</p>' +
+          provenanceHtml +
+          '<details style="margin-top:10px;">' +
+          '<summary style="cursor:pointer; font-weight:600; color:var(--primary);">展开完整抓取原文段落</summary>' +
+          '<pre style="white-space:pre-wrap; font-size:11px; background:#f8fafc; padding:8px; border-radius:6px; margin-top:6px; color:#334155;">' + escapeHtml(data.full_source_text) + '</pre>' +
+          '</details>' +
+          '</div>';
+      } catch (err) {
+        inspector.innerHTML = '<p style="color:var(--danger);">加载证据失败: ' + escapeHtml(String(err)) + '</p>';
+      }
+    }
+
+    function showNodeDetails(nodeData) {
+      const inspector = document.getElementById('inspector-body');
+      const props = nodeData.properties || {};
+      const entries = Object.entries(props);
+
+      entries.sort(function (a, b) {
+        const aEmpty = (a[1] === null || a[1] === undefined || a[1] === '');
+        const bEmpty = (b[1] === null || b[1] === undefined || b[1] === '');
+        if (aEmpty === bEmpty) return 0;
+        return aEmpty ? 1 : -1;
+      });
+
+      let rowsHtml = '';
+      for (const [k, v] of entries) {
+        let valDisplay = '<span class="null-tag">null (原文未写明，严禁补猜)</span>';
+        if (v !== null && v !== undefined && v !== '') {
+          if (typeof v === 'string' && v.indexOf('http') === 0) {
+            valDisplay = renderLink(v, '查看原始链接');
+          } else {
+            valDisplay = '<strong>' + escapeHtml(String(v)) + '</strong>';
+          }
+        }
+        rowsHtml += '<tr><td>' + escapeHtml(k) + '</td><td>' + valDisplay + '</td></tr>';
+      }
+      if (!rowsHtml) {
+        rowsHtml = '<tr><td colspan="2" class="null-tag">无额外扩展属性</td></tr>';
+      }
+      const srcBadge = nodeData.sourceType === 'Multi-Source'
+        ? '<span class="badge badge-multi">Multi-Source 跨源对齐融合</span>'
+        : '<span class="badge badge-round">' + escapeHtml(String(nodeData.sourceType || '')) + '</span>';
+      inspector.innerHTML =
+        '<div class="card">' +
+        '<div style="margin-bottom:6px;">' +
+        '<span class="badge" style="background:' + escapeHtml(nodeData.color) + '; color:#fff;">' + escapeHtml(nodeData.nodeType) + '</span>' +
+        srcBadge +
+        '<span class="badge badge-round">R' + escapeHtml(String(nodeData.round)) + ' 新增 / R' + escapeHtml(String(nodeData.updatedRound)) + ' 更新</span>' +
+        '</div>' +
+        '<div class="card-title">' + escapeHtml(nodeData.fullLabel) + '</div>' +
+        '<div style="font-size:11px; color:var(--text-muted); margin-bottom:8px;">ID: <code>' + escapeHtml(nodeData.id) + '</code></div>' +
+        '<div style="font-weight:600; font-size:12px; margin-top:8px;">📋 结构化属性明细：</div>' +
+        '<table class="kv-table"><tbody>' + rowsHtml + '</tbody></table>' +
+        '</div>';
+    }
+
+    async function loadGraph() {
+      const protein = document.getElementById('protein-filter').value;
+      const method = document.getElementById('method-filter').value;
+      const maxRound = document.getElementById('round-filter').value;
+      const params = new URLSearchParams();
+      if (protein && protein !== 'ALL') params.set('protein', protein);
+      if (method && method !== 'ALL') params.set('method', method);
+      if (maxRound) params.set('max_round', maxRound);
+
+      const resp = await fetch('/api/graph?' + params.toString());
+      const data = await resp.json();
+      document.getElementById('graph-stats-badge').textContent = data.stats.total_nodes + ' 节点 / ' + data.stats.total_edges + ' 边';
+
+      const pSelect = document.getElementById('protein-filter');
+      const curP = pSelect.value;
+      pSelect.innerHTML = '<option value="ALL">全部蛋白 (All Proteins)</option>';
+      (data.filters.proteins || []).forEach(function (p) {
+        const opt = document.createElement('option');
+        opt.value = p.node_id;
+        opt.textContent = p.label;
+        pSelect.appendChild(opt);
+      });
+      pSelect.value = curP || 'ALL';
+
+      const mSelect = document.getElementById('method-filter');
+      const curM = mSelect.value;
+      mSelect.innerHTML = '<option value="ALL">全部纯化方法 (All Methods)</option>';
+      (data.filters.methods || []).forEach(function (m) {
+        const opt = document.createElement('option');
+        opt.value = m.node_id;
+        opt.textContent = m.label;
+        mSelect.appendChild(opt);
+      });
+      mSelect.value = curM || 'ALL';
+
+      const rSelect = document.getElementById('resin-filter');
+      const curR = rSelect.value;
+      const defaultResins = [
+        { node_id: 'resin:ni_sepharose', label: 'Ni Sepharose' },
+        { node_id: 'resin:histrap', label: 'HisTrap' },
+        { node_id: 'resin:ni_ida', label: 'Ni-IDA' },
+        { node_id: 'resin:ni_nta', label: 'Ni-NTA' },
+        { node_id: 'resin:talon', label: 'TALON' }
+      ];
+      const rawResins = (data.filters && Array.isArray(data.filters.resins) && data.filters.resins.length > 0)
+        ? data.filters.resins
+        : (data.nodes || []).filter(function (n) {
+            return n.node_type === 'ResinMaterial';
+          });
+      const resinMap = new Map();
+      defaultResins.concat(rawResins).forEach(function (item) {
+        if (!item || !item.label) return;
+        const key = item.label.trim().toLowerCase();
+        if (!resinMap.has(key)) {
+          resinMap.set(key, {
+            node_id: item.node_id || ('resin:' + key.replace(/[^a-z0-9]+/g, '_')),
+            label: item.label.trim()
+          });
+        }
+      });
+      const resinNodes = Array.from(resinMap.values()).sort(function (a, b) {
+        return a.label.localeCompare(b.label);
+      });
+      rSelect.innerHTML =
+        '<option value="ALL">全部填料/柱材 (All Resins)</option>' +
+        '<option value="ONLY_RESINS">仅显示全部填料及 USES_RESIN 证据链 (' + resinNodes.length + ')</option>';
+      resinNodes.forEach(function (r) {
+        const opt = document.createElement('option');
+        opt.value = r.node_id;
+        opt.textContent = r.label;
+        rSelect.appendChild(opt);
+      });
+      rSelect.value = Array.from(rSelect.options).some(function (o) { return o.value === curR; }) ? curR : 'ALL';
+
+      initCytoscape(data.nodes, data.edges);
+      if (rSelect.value !== 'ALL') {
+        applyResinFilter();
+      }
+    }
+
+    async function loadLogsAndSources() {
+      const [logsResp, srcResp] = await Promise.all([fetch('/api/logs'), fetch('/api/sources')]);
+      const logsData = await logsResp.json();
+      const srcData = await srcResp.json();
+      cachedLogs = logsData.logs || [];
+      cachedSources = srcData.sources || [];
+      document.getElementById('count-logs').textContent = cachedLogs.length;
+      document.getElementById('count-sources').textContent = cachedSources.length;
+      renderLeftList();
+    }
+
+    function switchLeftTab(tabName) {
+      currentLeftTab = tabName;
+      document.getElementById('tab-logs').classList.toggle('active', tabName === 'logs');
+      document.getElementById('tab-sources').classList.toggle('active', tabName === 'sources');
+      renderLeftList();
+    }
+
+    function renderLeftList() {
+      const container = document.getElementById('left-list-container');
+      if (currentLeftTab === 'logs') {
+        if (!cachedLogs.length) {
+          container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">暂无迭代记录，请点击顶部“执行第 1 轮”按钮开始构建图谱。</p>';
+          return;
+        }
+        container.innerHTML = cachedLogs.map(function (log) {
+          const statusColor = log.status === 'SUCCESS' ? 'var(--success)' : 'var(--warning)';
+          let refinementsHtml = '';
+          if (log.refinements && log.refinements.length > 0) {
+            const itemsHtml = log.refinements.slice(0, 4).map(function (r) {
+              return '<li>' + escapeHtml(r.label) + ': ' + escapeHtml((r.details || []).join('; ')) + '</li>';
+            }).join('');
+            refinementsHtml =
+              '<div style="margin-top:6px; padding:6px; background:#f5f3ff; border-radius:4px; color:#5b21b6;">' +
+              '<strong>✨ 跨源对齐/知识补全 (' + escapeHtml(String(log.refinements.length)) + ' 项)：</strong>' +
+              '<ul style="margin-left:14px; margin-top:2px;">' + itemsHtml + '</ul>' +
+              '</div>';
+          }
+          return '<div class="card">' +
+            '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">' +
+            '<span class="card-title" style="margin:0;">第 ' + escapeHtml(String(log.round_num)) + ' 轮迭代</span>' +
+            '<span style="font-size:11px; font-weight:700; color:' + statusColor + ';">' + escapeHtml(String(log.status)) + '</span>' +
+            '</div>' +
+            '<p style="color:#334155; line-height:1.45; margin-bottom:6px;"><strong>检索理由：</strong>' + escapeHtml(log.search_rationale) + '</p>' +
+            '<div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:6px;">' +
+            '<span class="badge badge-round">+' + escapeHtml(String(log.new_sources_count)) + ' 资料</span>' +
+            '<span class="badge badge-round">+' + escapeHtml(String(log.new_nodes_count)) + ' 节点</span>' +
+            '<span class="badge badge-round">+' + escapeHtml(String(log.new_edges_count)) + ' 关系</span>' +
+            '</div>' +
+            '<p style="color:var(--text-muted); font-size:11.5px;">' + escapeHtml(log.summary_note) + '</p>' +
+            refinementsHtml +
+            '</div>';
+        }).join('');
+      } else {
+        if (!cachedSources.length) {
+          container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">暂无来源资料。</p>';
+          return;
+        }
+        container.innerHTML = cachedSources.map(function (src) {
+          const badgeClass = src.source_type === 'UniProt' ? 'badge-uniprot' : src.source_type === 'Cytiva' ? 'badge-cytiva' : 'badge-openalex';
+          const channelText = escapeHtml(src.collection_channel || src.source_type || '');
+          const pubBadge = (src.publication_source && src.publication_source !== src.source_type)
+            ? '<span class="badge badge-publisher">' + escapeHtml(src.publication_source) + '</span>'
+            : '';
+          const provenanceHtml = buildProvenanceHtml(src, src.url);
+
+          return '<div class="card">' +
+            '<div style="margin-bottom:4px;">' +
+            '<span class="badge ' + badgeClass + '">渠道: ' + channelText + '</span>' +
+            pubBadge +
+            '<span class="badge badge-round">第 ' + escapeHtml(String(src.discovered_round)) + ' 轮引入</span>' +
+            '</div>' +
+            '<div class="card-title">' + escapeHtml(src.title) + '</div>' +
+            provenanceHtml +
+            '</div>';
+        }).join('');
+      }
+    }
+
+    async function triggerRound(roundNum) {
+      const banner = document.getElementById('loading-banner');
+      banner.style.display = 'block';
+      setButtonsDisabled(true);
+      try {
+        const resp = await fetch('/api/iterate/' + encodeURIComponent(roundNum), { method: 'POST' });
+        const data = await resp.json();
+        if (!resp.ok) {
+          alert('执行失败: ' + (data.detail || '未知错误'));
+        } else {
+          await Promise.all([loadGraph(), loadLogsAndSources()]);
+        }
+      } catch (err) {
+        alert('请求异常: ' + err);
+      } finally {
+        banner.style.display = 'none';
+        setButtonsDisabled(false);
+      }
+    }
+
+    async function resetKG() {
+      if (!confirm('确定要清空当前知识图谱和所有迭代记录吗？')) return;
+      setButtonsDisabled(true);
+      try {
+        await fetch('/api/reset', { method: 'POST' });
+        document.getElementById('protein-filter').value = 'ALL';
+        document.getElementById('method-filter').value = 'ALL';
+        document.getElementById('resin-filter').value = 'ALL';
+        document.getElementById('round-filter').value = '';
+        await Promise.all([loadGraph(), loadLogsAndSources()]);
+      } finally {
+        setButtonsDisabled(false);
+      }
+    }
+
+    function setButtonsDisabled(disabled) {
+      document.querySelectorAll('header button').forEach(function (btn) {
+        btn.disabled = disabled;
+      });
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str
+        .replace(/&/g, '&')
+        .replace(/</g, '<')
+        .replace(/>/g, '>')
+        .replace(/"/g, '"');
+    }
+
+    window.addEventListener('DOMContentLoaded', async function () {
+      await Promise.all([loadGraph(), loadLogsAndSources()]);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+[
+  {
+    "source_id": "uniprot_P0A9K9",
+    "source_type": "UniProt",
+    "title": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD (P0A9K9)",
+    "url": "https://www.uniprot.org/uniprotkb/P0A9K9/entry",
+    "raw_text": "UniProt Entry: P0A9K9 (SLYD_ECOLI)\nProtein Name: FKBP-type peptidyl-prolyl cis-trans isomerase SlyD\nGene: slyD\nOrganism: Escherichia coli (strain K12)\nSequence Length: 196 aa | Total Histidines: 20 | Max Consecutive His: 3\nC-terminal 25aa: GHDHGHEHGGEGCCGGKGNGGCGCH\nNative Metal-Binding Contaminant Risk: Low",
+    "content_hash": "c1da6031822c50b924980dc0975dcd56d48fa28ddc4ecb3e509b61b23436ec60",
+    "discovered_round": 1,
+    "created_at": "2026-11-22T15:26:38.134878+00:00",
+    "metadata": {
+      "accession": "P0A9K9",
+      "entry_name": "SLYD_ECOLI",
+      "db_type": "sp",
+      "protein_name": "FKBP-type peptidyl-prolyl cis-trans isomerase SlyD",
+      "gene_name": "slyD",
+      "organism": "Escherichia coli (strain K12)",
+      "sequence_length": 196,
+      "his_count": 20,
+      "max_consecutive_his": 3,
+      "is_native_imac_contaminant": false,
+      "search_query": "(accession:P42212) OR (accession:P0A9K9) OR (accession:P77398)"
+    }
+  },
+  {
+    "source_id": "uniprot_P42212",
+    "source_type": "UniProt",
+    "title": "Green fluorescent protein (P42212)",
+    "url": "https://www.uniprot.org/uniprotkb/P42212/entry",
+    "raw_text": "UniProt Entry: P42212 (GFP_AEQVI)\nProtein Name: Green fluorescent protein\nGene: GFP\nOrganism: Aequorea victoria\nSequence Length: 238 aa | Total Histidines: 10 | Max Consecutive His: 1\nC-terminal 25aa: KRDHMVLLEFVTAAGITHGMDELYK\nNative Metal-Binding Contaminant Risk: Low",
+    "content_hash": "d14f6d817274a878da1c20a1d5313232f1d68226822b1086190a1709567ba825",
+    "discovered_round": 1,
+    "created_at": "2026-11-22T15:26:38.138702+00:00",
+    "metadata": {
+      "accession": "P42212",
+      "entry_name": "GFP_AEQVI",
+      "db_type": "sp",
+      "protein_name": "Green fluorescent protein",
+      "gene_name": "GFP",
+      "organism": "Aequorea victoria",
+      "sequence_length": 238,
+      "his_count": 10,
+      "max_consecutive_his": 1,
+      "is_native_imac_contaminant": false,
+      "search_query": "(accession:P42212) OR (accession:P0A9K9) OR (accession:P77398)"
+    }
+  },
+  {
+    "source_id": "uniprot_P77398",
+    "source_type": "UniProt",
+    "title": "Bifunctional polymyxin resistance protein ArnA (P77398)",
+    "url": "https://www.uniprot.org/uniprotkb/P77398/entry",
+    "raw_text": "UniProt Entry: P77398 (ARNA_ECOLI)\nProtein Name: Bifunctional polymyxin resistance protein ArnA\nGene: arnA\nOrganism: Escherichia coli (strain K12)\nSequence Length: 660 aa | Total Histidines: 27 | Max Consecutive His: 2\nC-terminal 25aa: IDMQETIDETLDFFLRTVDLTDKPS\nNative Metal-Binding Contaminant Risk: Low",
+    "content_hash": "b9d0f08e5084469e738b848962f4b7bfa27e80e7bc263be918ee60785f3fc851",
+    "discovered_round": 1,
+    "created_at": "2026-11-22T15:26:38.141622+00:00",
+    "metadata": {
+      "accession": "P77398",
+      "entry_name": "ARNA_ECOLI",
+      "db_type": "sp",
+      "protein_name": "Bifunctional polymyxin resistance protein ArnA",
+      "gene_name": "arnA",
+      "organism": "Escherichia coli (strain K12)",
+      "sequence_length": 660,
+      "his_count": 27,
+      "max_consecutive_his": 2,
+      "is_native_imac_contaminant": false,
+      "search_query": "(accession:P42212) OR (accession:P0A9K9) OR (accession:P77398)"
+    }
+  },
+  {
+    "source_id": "cytiva_669ade6a31",
+    "source_type": "Cytiva",
+    "title": "[Cytiva Protocol] Protocol for efficient purification of endotoxin-free human recombinant tau protein.",
+    "url": "https://europepmc.org/article/PMC/PMC13546840",
+    "raw_text": "Title: Protocol for efficient purification of endotoxin-free human recombinant tau protein.\nProtocol Summary: Microglia, the brain-resident immune cells, can propagate tau protein in a prion-like manner in neurodegenerative diseases called tauopathies. Here, we present an efficient protocol for the purification of endotoxin-free human recombinant tau protein. We detail steps for tau expression in E. coli, followed by on-column Triton X-114-based endotoxin depletion during purification, concentration, residual endotoxin removal, and quality control of the final product. We then describe a workflow for heparin-induced in vitro aggregation of purified tau into preformed fibrils. This protocol enables an accurate investigation of the microglial response to tau without the confounding effect of residual endotoxin. For complete details on the use and execution of this protocol, please refer to Karabova et al.<sup>1</sup>.",
+    "content_hash": "f7b956c60e5fa3750706eb882beada5e4eef8ecc233e5857e75c8710d4a4750d",
+    "discovered_round": 1,
+    "created_at": "2026-11-22T15:26:39.838373+00:00",
+    "metadata": {
+      "catalog_origin": "https://www.cytivalifesciences.com/en/us/support/handbooks",
+      "pdf_endpoint": "https://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC13546840&blobtype=pdf"
+    }
+  },
+  {
+    "source_id": "openalex_W2579982376",
+    "source_type": "OpenAlex",
+    "title": "Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres",
+    "url": "https://doi.org/10.1039/c6ra27736e",
+    "raw_text": "Title: Highly selective magnetic affinity purification of histidine-tagged proteins by Ni 2+ carrying monodisperse composite microspheres\nYear: 2017\nAbstract: A magnetic sorbent based on monodisperse-porous silica microspheres was developed for His-tagged protein purification by immobilized metal affinity chromatography.",
+    "content_hash": "bbc91f2406dc287e36539cc84418bb616c3cc547313e59a801f6db381e358d47",
+    "discovered_round": 1,
+    "created_at": "2026-11-22T15:26:40.786257+00:00",
+    "metadata": {
+      "openalex_id": "W2579982376",
+      "publication_year": 2017,
+      "authors": [
+        "Kouroush Salimi",
+        "Duygu Deniz Usta",
+        "İlkay Koçer"
+      ],
+      "cited_by_count": 69,
+      "search_query": "6xHis tag protein purification IMAC imidazole"
+    }
+  },
+  {
+    "source_id": "openalex_W4399177879",
+    "source_type": "OpenAlex",
+    "title": "A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification",
+    "url": "https://doi.org/10.3389/fmicb.2024.1403623",
+    "raw_text": "Title: A systematic analysis of affinity tags in the haloarchaeal expression system, Haloferax volcanii for protein purification\nYear: 2024\nAbstract: Extremophilic proteins are valuable in various fields, but their expression can be challenging in traditional hosts like Escherichia coli due to misfolding and aggregation. Haloferax volcanii (H. volcanii), a halophilic expression system, offers a solution. This study examined cleavable and non-cleavable purification tags at both the N- and C-termini when fused with the superfolder green fluorescent protein (sfGFP) in H. volcanii. Our findings reveal that an N-terminal 8xHis-tag or Strep-tag®II significantly enhances protein production, purity, and yield in H. volcanii. Further experiments with mCherry and halophilic alcohol dehydrogenase (ADH) showed improved expression and purification yields when the 8xHis-tag or Strep-tag®II was positioned at the C-terminus for mCherry and at the N-terminus for ADH. Co-positioning 8xHis-tag and Twin-Strep-tag® at the N-terminus of sfGFP, mCherry, and ADH yielded significantly enhanced results. These findings highlight the importance of thoughtful purification tag design and selection in H. volcanii, providing valuable insights for improving protein production and purification with the potential to advance biotechnological applications.",
+    "content_hash": "93861afb07a8e2552853922c2154d010b9945bba3c0e59352ec5c6caee10f76a",
+    "discovered_round": 1,
+    "created_at": "2026-11-22T15:26:40.790917+00:00",
+    "metadata": {
+      "openalex_id": "W4399177879",
+      "publication_year": 2024,
+      "authors": [
+        "Ram Karan",
+        "Dominik Renn",
+        "Thorsten Allers"
+      ],
+      "cited_by_count": 5,
+      "search_query": "6xHis tag protein purification IMAC imidazole"
+    }
+  },
+  {
+    "source_id": "openalex_W2564552863",
+    "source_type": "OpenAlex",
+    "title": "Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia",
+    "url": "https://doi.org/10.16923/reb.v14i3.638",
+    "raw_text": "Title: Green fluorescent protein purification through Immobilized Metal Affinity Chromatografy (IMAC) and its relevance for Biomedical Science students during Biochemistry practical classes at La Trobe University – Australia\nYear: 2016\nAbstract: Este trabalho foi realizado como prática integrada da disciplina de Bioquímica no curso de graduação em Ciências Biomédicas, objetivando demonstrar técnicas utilizadas para a purificação da Proteina Fluorescente Verde (GFP). Para realização dos experimentos foi utilizada como metodologia principal a Cromatografia de Afinidade por Metal Imobilizado (IMAC). A região de abertura para alongamento da GFP foi subclonada dentro de um vetor de expressão chamado pQE30. A produção subsequente da proteína marcada com hexahistidina na região N-terminal, facilitou sua purificação pela IMAC. Uma purificação de aproximadamente três vezes mais que a esperada da GFP foi obtida. Dessa forma, os estudantes completaram o curso adquirindo significante experiência em relação às técnicas fundamentais na área molecular relacionadas à clonagem e princípios de expressão e purificação de proteínas recombinantes.",
+    "content_hash": "1d7342309ef4be23c708d64fd5af1001ec66e73eef22f650e2e59172e0d183d7",
+    "discovered_round": 1,
+    "created_at": "2026-11-22T15:26:40.794757+00:00",
+    "metadata": {
+      "openalex_id": "W2564552863",
+      "publication_year": 2016,
+      "authors": [
+        "Alex Jose José De Melo Silva",
+        "Lumar Lucena Alves",
+        "Julian L. Pakay"
+      ],
+      "cited_by_count": 1,
+      "search_query": "6xHis tag protein purification IMAC imidazole"
+    }
+  },
+  {
+    "source_id": "uniprot_P10371",
+    "source_type": "UniProt",
+    "title": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase (P10371)",
+    "url": "https://www.uniprot.org/uniprotkb/P10371/entry",
+    "raw_text": "UniProt Entry: P10371 (HIS4_ECOLI)\nProtein Name: 1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase\nGene: hisA\nOrganism: Escherichia coli (strain K12)\nSequence Length: 245 aa | Total Histidines: 3 | Max Consecutive His: 1\nC-terminal 25aa: GVIVGRALLEGKFTVKEAIACWQNA\nNative Metal-Binding Contaminant Risk: Low",
+    "content_hash": "acde47ddd43ede0f8dd11eb321b0e7e1c621ebf4a04116051fff73930bc46633",
+    "discovered_round": 2,
+    "created_at": "2026-11-22T15:28:07.582954+00:00",
+    "metadata": {
+      "accession": "P10371",
+      "entry_name": "HIS4_ECOLI",
+      "db_type": "sp",
+      "protein_name": "1-(5-phosphoribosyl)-5-[(5-phosphoribosylamino)methylideneamino] imidazole-4-carboxamide isomerase",
+      "gene_name": "hisA",
+      "organism": "Escherichia coli (strain K12)",
+      "sequence_length": 245,
+      "his_count": 3,
+      "max_consecutive_his": 1,
+      "is_native_imac_contaminant": false,
+      "search_query": "(gene:slyd AND organism_id:83333) OR (gene:hisA AND organism_id:83333)"
+    }
+  }
+]
